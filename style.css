@@ -14,9 +14,10 @@ body {
 	margin: 0 auto;
 
 	background-image: url(images/Background.png);
+	background-size: cover;
 }
 
-@media screen and (max-width:1300px) {
+@media screen and (max-width:1200px) {
 	.wrapper {
 		background-image: none;
 	}
@@ -439,6 +440,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
+	max-width: 100%;
 	
 	background-color: #2D3347;
 }
