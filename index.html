@@ -2,14 +2,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="./style.css">
 	<title>Название</title>
 </head>
 <body>
 	<div class="wrapper">
 		<header class="header">
-			<a class="header__title">Название</a>
+			<img src="./images/HeaderLogo.jpg" class="header__title">
 			<div class="header__buttons_row">
 				<button class="header__buttons_button">Кнопка</button>
 				<button class="header__buttons_button">Кнопка</button>
@@ -17,7 +17,7 @@
 			<a class="header__logo"></a>
 		</header>
 		<main class="content">
-			<div class="content__albums_row">
+			<div class="content__albums_column">
 				<a class="content__albums_title">Выпускные альбомы</a>
 				<div class="content__albums-previews_row">
 					<div class="content__albums-previews_preview">
@@ -30,10 +30,11 @@
 					</div>
 				</div>
 			</div>
+			<hr class="content__block_separation">
 			<div class="content__services_column">
 				<div class="content__service_block">
+					<a class="content__service_title">Название</a> 
 					<div class="content__service_text-info">
-						<a class="content__service_title">Название услуги альбома</a>
 						<a class="content__service_price">2500 рублей</a>
 						<ul class="content__service_options_list">
 							<li>Lorem ipsum dolor</li>
@@ -42,68 +43,25 @@
 							<li>Ut enim ad minim veniam</li>
 							<li>quis nostrud exercitation</li>
 						</ul>
-						<button class="content__service_order_button">Заказать</button>
-					</div>
-					<a class="content__service_image"></a>
-				</div>
-				<div class="content__service_block">
-					<div class="content__service_text-info">
-						<a class="content__service_title">Название услуги альбома</a>
-						<a class="content__service_price">2500 рублей</a>
-						<ul class="content__service_options_list">
-							<li>Lorem ipsum dolor</li>
-							<li>sit ametsed do eiusmod tempor incididunt</li>
-							<li>ut labore et dolore magna aliqua</li>
-							<li>Ut enim ad minim veniam</li>
-							<li>quis nostrud exercitation</li>
-						</ul>
-						<button class="content__service_order_button">Заказать</button>
-					</div>
-					<a class="content__service_image"></a>
-				</div>
-				<div class="content__service_block">
-					<div class="content__service_text-info">
-						<a class="content__service_title">Название услуги альбома</a>
-						<a class="content__service_price">2500 рублей</a>
-						<ul class="content__service_options_list">
-							<li>Lorem ipsum dolor</li>
-							<li>sit ametsed do eiusmod tempor incididunt</li>
-							<li>ut labore et dolore magna aliqua</li>
-							<li>Ut enim ad minim veniam</li>
-							<li>quis nostrud exercitation</li>
-						</ul>
-						<button class="content__service_order_button">Заказать</button>
-					</div>
-					<a class="content__service_image"></a>
-				</div>
-				<div class="content__service_block">
-					<div class="content__service_text-info">
-						<a class="content__service_title">Название услуги альбома</a>
-						<a class="content__service_price">2500 рублей</a>
-						<ul class="content__service_options_list">
-							<li>Lorem ipsum dolor</li>
-							<li>sit ametsed do eiusmod tempor incididunt</li>
-							<li>ut labore et dolore magna aliqua</li>
-							<li>Ut enim ad minim veniam</li>
-							<li>quis nostrud exercitation</li>
-						</ul>
-						<button class="content__service_order_button">Заказать</button>
+						<button class="content__service_order-button">Заказать</button>
 					</div>
 					<a class="content__service_image"></a>
 				</div>
 			</div>
+			<hr class="content__block_separation">
 			<div class="content__grid_previews">
-				<div class="content__grid_preview-row">
-					<a class="content__grid_preview-image"></a>
-					<a class="content__grid_preview-image"></a>
-					<a class="content__grid_preview-image"></a>
+				<div class="content__grid_preview_row">
+					<a class="content__grid_preview_image"></a>
+					<a class="content__grid_preview_image"></a>
+					<a class="content__grid_preview_image"></a>
 				</div>
-				<div class="content__grid_preview-row">
-					<a class="content__grid_preview-image"></a>
-					<a class="content__grid_preview-image"></a>
-					<a class="content__grid_preview-image"></a>
+				<div class="content__grid_preview_row">
+					<a class="content__grid_preview_image"></a>
+					<a class="content__grid_preview_image"></a>
+					<a class="content__grid_preview_image"></a>
 				</div>
 			</div>
+			<hr class="content__block_separation">
 			<div class="content__pre-footer">
 				<a class="content__pre-footer_title">Получить подробную консультацию по альбомам</a>
 				<button class="content__pre-footer_button">Написать нам</button>
@@ -113,5 +71,5 @@
 			<a class="footer_title">Санкт Петербург, 2023</a>
 		</footer>
 	</div>
-</body>
+	</body>
 </html>

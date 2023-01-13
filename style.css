@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Montserrat";
-	src: url(fonts/Montserrat.ttf);
+	src: url("fonts/Montserrat.ttf");
 	font-style: normal;
 }
 
@@ -10,26 +10,56 @@ body {
 	font-family: "Montserrat";
 }
 
+.wrapper {
+	margin: 0 auto;
+
+	background-image: url(images/Background.png);
+}
+
+@media screen and (max-width:1300px) {
+	.wrapper {
+		background-image: none;
+	}
+}
+
+@media screen and (max-width:900px) {
+	.wrapper {
+		min-width: 900px;
+	}
+}
+
+@media screen and (max-width:565px) {
+	.wrapper {
+		min-width: 720px;
+	}
+}
+
 .header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: center;
 
-	width: 100%;
+	margin: 0 auto;
+
+	max-width: 100%;
 }
 
 .header__title {
-	margin: 33px 0 33px 80px;
+	margin: 33px 80px;
 	
 	font-weight: 400;
 	font-size: 28px;
 	line-height: 34px;
-	
+
+	max-width: 181px;
+	max-height: 30px;
+
 	color: #131313;
 }
 
 .header__buttons_row {
+	margin: 20px auto;
+
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -38,8 +68,8 @@ body {
 }
 
 .header__buttons_button {
-	width: 154px;
-	height: 60px;
+	min-width: 154px;
+	min-height: 60px;
 	
 	border: 1px solid #131313;
 	border-radius: 30px;
@@ -54,12 +84,40 @@ body {
 }
 
 .header__logo {
-	margin: 20px 80px 20px 0;
+	margin: 20px 80px;
 
-	width: 60px;
-	height: 60px;
+	min-width: 60px;
+	min-height: 60px;
 
 	background-color: #4D9DE0;
+}
+
+@media screen and (max-width:900px) {
+	.header__title {
+		margin: 60px 10px;
+	}
+
+	.header__logo {
+		margin: 45px 24px;
+	}
+}
+
+@media screen and (max-width:720px) {
+	.header__buttons_row {
+		margin: 25px auto;
+
+		gap: 20px;
+	}
+
+	.header__buttons_button {
+		min-width: 150px;
+		min-height: 100px;
+
+		font-size: 24px;
+		line-height: 29px;
+	
+		border-radius: 61px;
+	}
 }
 
 .content {
@@ -68,23 +126,30 @@ body {
 	align-items: center;
 	gap: 40px;
 
-	margin: 0 auto;
+	margin: 53px auto;
+	padding: 0 80px 40px 80px;
 
-	width: 1200px;
+	max-width: 1200px;
 }
 
-.content__albums_row {
+.content__block_separation {
+	visibility: hidden;
+
+	min-width: 640px;
+
+	border: 1px solid #C0C0C0;
+}
+
+.content__albums_column {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	gap: 20px;
 
-	margin-top: 40px;
+	padding: 40px 80px;
 }
 
 .content__albums_title {
-	width: 735px;
-	height: 78px;
-
 	font-weight: 700;
 	font-size: 64px;
 	line-height: 78px;
@@ -108,21 +173,57 @@ body {
 }
 
 .content__albums-previews_preview_image {
-	width: 426px;
-	height: 568px;
+	max-width: 580px;
+	max-height: 773px;
+
+	min-width: 426px;
+	min-height: 568px;
 
 	background-color: #4D9DE0;
 }
 
 .content__albums-previews_preview_down-text {
-	width: 426px;
-	height: 29px;
-
 	font-weight: 400;
 	font-size: 24px;
 	line-height: 29px;
 
 	color: #131313;
+}
+
+@media screen and (max-width:1050px) {
+	.content {
+		margin: 0 auto;
+		padding: 0;
+	}	
+
+	.content__block_separation {
+		visibility: visible;
+	}
+
+	.content__albums_column {	
+		padding: 20px 30px;
+	}
+
+	.content__albums-previews_row {
+		flex-direction: column;
+	}
+
+	.content__albums-previews_preview_down-text {
+		font-size: 32px;
+		line-height: 39px;
+	}
+
+	.content__albums-previews_preview_image {
+		min-width: 580px;
+		min-height: 773px;
+
+		background: #4D9DE0;
+	}
+
+	.content__albums_title {
+		font-size: 48px;
+		line-height: 59px;
+	}
 }
 
 .content__services_column {
@@ -148,15 +249,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
-
-	width: 450px;
-	height: 375px;
 }
 
 .content__service_title {
-	width: 450px;
-	height: 39px;
-
 	font-weight: 500;
 	font-size: 32px;
 	line-height: 39px;
@@ -165,9 +260,6 @@ body {
 }
 
 .content__service_price {
-	width: 156px;
-	height: 29px;
-
 	font-weight: 300;
 	font-size: 22px;
 	line-height: 29px;
@@ -180,10 +272,12 @@ body {
 	font-size: 20px;
 	line-height: 24px;
 
+	min-width: 450px;
+
 	color: #131313;
 }
 
-.content__service_order_button {
+.content__service_order-button {
 	width: 194px;
 	height: 73px;
 
@@ -197,30 +291,108 @@ body {
 }
 
 .content__service_image {
-	width: 300px;
-	height: 375px;
+	order: 1;
+
+	min-width: 300px;
+	min-height: 375px;
 
 	background: #4D9DE0;
+}
+
+@media screen and (max-width:1050px) {
+	.content__services_column {
+		padding: 20px;
+	}
+
+	.content__service_block {
+		flex-direction: column;
+
+		padding: 10px;
+		gap: 20px;
+
+		background-color: white;
+		border-radius: 0;
+	}
+
+	.content__service_text-info {
+		align-items: center;
+
+		padding: 10px;
+
+		order: 2;
+	}
+
+	.content__service_title {
+		font-size: 72px;
+		line-height: 88px;
+
+		order: 0;
+	}
+
+	.content__service_price {
+		font-size: 48px;
+		line-height: 59px;
+	}
+
+	.content__service_options_list {
+		min-width: 580px;
+
+		font-size: 24px;
+		line-height: 29px;
+	}
+
+	.content__service_order-button {
+		background-color: white;
+	}
+
+	.content__service_image {
+		margin: 0 auto;
+
+		min-width: 580px;
+		min-height: 725px;
+
+		padding: 10px;
+
+		order: 1;
+	}
 }
 
 .content__grid_previews {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 10px;
+
+	max-width: 1040px;
 }
 
-.content__grid_preview-row {
+.content__grid_preview_row {
 	display: flex;
 	flex-direction: row;
 	gap: 20px;
+
+	padding: 10px 74px;
 }
 
-.content__grid_preview-image {
-	width: 284px;
-	height: 378px;
+.content__grid_preview_image {
+	min-width: 284px;
+	min-height: 378px;
 
 	background: #4D9DE0;
+}
+
+@media screen and (max-width:950px) {
+	.content__grid_previews {
+		max-width: 640px;
+	}
+
+	.content__grid_preview_row {
+		padding: 10px;
+	}
+
+	.content__grid_preview_image {
+		min-width: 193px;
+		min-height: 257px;
+	}
 }
 
 .content__pre-footer {
@@ -231,15 +403,19 @@ body {
 }
 
 .content__pre-footer_title {
-	width: 844px;
-	height: 39px;
-
 	font-weight: 500;
 	font-size: 32px;
 	line-height: 39px;
 	text-align: center;
 
-	color: #131313;
+	color: #2D3347;
+}
+
+@media screen and (max-width:900px) {
+	.content__pre-footer_title {
+		font-size: 36px;
+		line-height: 44px;
+	}
 }
 
 .content__pre-footer_button {	
@@ -253,6 +429,7 @@ body {
 	font-size: 28px;
 	line-height: 34px;
 
+	background-color: #2D3347;
 	color: #F7FFF6;
 }
 
@@ -262,15 +439,12 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
-	background-color: #131313;
+	
+	background-color: #2D3347;
 }
 
 .footer_title {
 	padding: 40px 0 40px 0;
-
-	width: 231px;
-	height: 24px;
 
 	font-weight: 300;
 	font-size: 18px;
