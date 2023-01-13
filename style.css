@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Montserrat";
-	src: url("fonts/Montserrat.ttf");
+	src: url(fonts/Montserrat.ttf);
 	font-style: normal;
 }
 
@@ -235,29 +235,35 @@ body {
 }
 
 .content__service_block {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
+	display: grid;
+	grid-template-areas: 
+            "title title image"
+            "text text image"
+            "text text image";
+	gap: 20px 10px;
+
 	padding: 60px;
-	gap: 10px;
-	isolation: isolate;
 
 	background: #EBF2EA;
 	border-radius: 60px;
 }
 
-.content__service_text-info {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-}
-
 .content__service_title {
+	grid-area: title;
+
 	font-weight: 500;
 	font-size: 32px;
 	line-height: 39px;
 
 	color: #131313;
+}
+
+.content__service_text-info {
+	grid-area: text;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
 .content__service_price {
@@ -272,8 +278,6 @@ body {
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 24px;
-
-	min-width: 450px;
 
 	color: #131313;
 }
@@ -292,7 +296,7 @@ body {
 }
 
 .content__service_image {
-	order: 1;
+	grid-area: image;
 
 	min-width: 300px;
 	min-height: 375px;
@@ -306,7 +310,10 @@ body {
 	}
 
 	.content__service_block {
-		flex-direction: column;
+		grid-template-areas: 
+				"title"
+				"image"
+				"text";
 
 		padding: 10px;
 		gap: 20px;
@@ -319,15 +326,11 @@ body {
 		align-items: center;
 
 		padding: 10px;
-
-		order: 2;
 	}
 
 	.content__service_title {
 		font-size: 72px;
 		line-height: 88px;
-
-		order: 0;
 	}
 
 	.content__service_price {
@@ -348,13 +351,10 @@ body {
 
 	.content__service_image {
 		margin: 0 auto;
-
-		min-width: 580px;
-		min-height: 725px;
-
 		padding: 10px;
 
-		order: 1;
+		min-width: 580px;
+		min-height: 725px; 
 	}
 }
 
